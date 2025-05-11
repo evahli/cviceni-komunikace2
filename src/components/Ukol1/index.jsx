@@ -8,6 +8,10 @@ Zadání: Začneme velmi jednoduše. Zařiďte, aby se po kliknutí na tlačítk
 
 export const Ukol1 = () => {
   const [jmeno, setJmeno] = useState("Jirka");
+  const handleClick = (event) => {
+    console.log(event.target.textContent)
+    setJmeno(event.target.textContent)
+  }
 
   return (
     <>
@@ -15,10 +19,10 @@ export const Ukol1 = () => {
         <strong>{jmeno}</strong>
       </p>
       <div>
-        <button>Jirka</button>
-        <button>Honza</button>
-        <button>Tomáš</button>
-        <button>Šimon</button>
+        <button onClick={handleClick}>Jirka</button>
+        <button onClick={handleClick}>Honza</button>
+        <button onClick={handleClick}>Tomáš</button>
+        <button onClick={handleClick}>Šimon</button>
       </div>
     </>
   );
